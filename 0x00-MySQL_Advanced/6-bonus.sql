@@ -1,3 +1,4 @@
+DELIMITER //
 CREATE PROCEDURE addBonus(IN user_id INT, IN project_name VARCHAR(255), IN score INT)
 BEGIN
     DECLARE project_id INT;
@@ -10,4 +11,5 @@ BEGIN
     END IF;
 
     INSERT INTO corrections (user_id, project_id, score) VALUES (user_id, project_id, score);
-END;
+END;//
+DELIMITER ;
