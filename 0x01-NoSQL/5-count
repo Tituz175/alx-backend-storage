@@ -1,0 +1,3 @@
+// count all documents in the coollection
+db.school.count({})
+
