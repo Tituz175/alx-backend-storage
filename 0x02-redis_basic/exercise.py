@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+"""Module Documentation"""
+import uuid
+import redis
+from typing import Union
+
+
+class Cache:
+    """Class Documentation"""
+
+    def __init__(self) -> None:
+        """Construction Function Documentation"""
+        self._redis = redis.Redis()
+        self._redis.flushdb()
+
+    def store(self, data: Union[str, bytes, int, float]) -> str:
+        """Store Function Documentation"""
+        key = str(uuid.uuid4())
+        self._redis.set(key, data)
+        return key
